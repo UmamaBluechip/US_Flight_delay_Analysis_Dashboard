@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Box Plot</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #343a40;
+            color: #fff;
+            padding-top: 70px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #495057;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2 class="text-center mb-4">Flight Delay Analysis</h2>
+        <ul>
+            <li><a href="/"><i class="home"></i>Home</a></li>
+            <li><a href="/line_plot"><i class="fas fa-chart-line mr-2"></i>Departure Delays Over Days</a></li>
+            <li><a href="/bar_chart"><i class="fas fa-chart-bar mr-2"></i>Avg. Arrival Delays by Airlines</a></li>
+            <li><a href="/choropleth_map"><i class="fas fa-chart-choropleth mr-2"></i>Total Departure Delay Minutes by States</a></li>
+            <li><a href="/boxplot"><i class="fas fa-chart-box mr-2"></i>Departure Delays by Airlines</a></li>
+            <li><a href="/scatter_plot"><i class="fas fa-chart-scatter mr-2"></i>Departure vs Arrival Delays</a></li>
+        </ul>
+    </div>
+
+    <div id="boxplot" class="content">
+        <script>
+            var plotContent = '{{ plot|safe }}';
+
+            document.getElementById('boxplot').innerHTML = plotContent;
+        </script>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+</html>

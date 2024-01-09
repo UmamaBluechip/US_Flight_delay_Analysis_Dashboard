@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highcharts Map</title>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+</head>
+<body>
+    <div id="container" style="height: 500px; min-width: 310px"></div>
+
+    <script>
+
+        var data = 
+
+        Highcharts.mapChart('container', {
+            chart: {
+                map: 'countries/us/us-all',
+                borderWidth: 1
+            },
+            title: {
+                text: 'Total Delay Time by State'
+            },
+            series: [{
+                data: data,
+                name: 'Total Delay Time',
+                keys: ['state', 'value'],
+                joinBy: 'name',
+                states: {
+                    hover: {
+                        color: '#a4edba'
+                    }
+                },
+                tooltip: {
+                    pointFormat: 'State: {point.state}, Total Delay Time: {point.value}'
+                }
+            }]
+        });
+    </script>
+</body>
+</html>
