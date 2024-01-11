@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, render_template, send_file
 import pandas as pd
-import matplotlib.pyplot as plt
 import io
 import plotly.express as px
 from utils.data_processing import load_flight_data, preprocess_flight_data, geo_data
