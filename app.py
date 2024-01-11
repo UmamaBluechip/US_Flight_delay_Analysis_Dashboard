@@ -6,7 +6,7 @@ import plotly.express as px
 from utils.data_processing import load_flight_data, preprocess_flight_data, geo_data
 
 
-file_path = 'data\\On_Time_Marketing_Carrier_On_Time_Performance_(Beginning_January_2018)_2023_1.csv'
+file_path = 'data/On_Time_Marketing_Carrier_On_Time_Performance_(Beginning_January_2018)_2023_1.csv'
 data = load_flight_data(file_path)
 
 final_data = preprocess_flight_data(data)
